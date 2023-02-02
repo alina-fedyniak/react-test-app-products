@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import 'swiper/css';
 
 export const StyledWrap = styled.div`
   max-width: 55rem;
@@ -28,6 +29,7 @@ export const StyledImg = styled.div`
 
 export const StyledBlockInfo = styled.div`
   text-align: left;
+  width: 80%;
 `;
 
 export const StyledName = styled.div`

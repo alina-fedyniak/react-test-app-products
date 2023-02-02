@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import { Image, Space, Button } from 'antd';
 import { useParams } from 'react-router-dom';
+import { SwiperSlide, Swiper } from 'swiper/react';
 import {
     StyledWrap,
     StyledName,
@@ -18,7 +19,8 @@ const ProductContent = () => {
     const [productData, setProductData] = useState([]);
     const [product, setProduct] = useState(null);
     const productByColor = product ?? productData?.colors?.at(0);
-    const image = productByColor?.images?.at(0);
+    const sizes = productData?.colors?.at(0).sizes.join(', ');
+    console.log(productData?.colors?.at(0).sizes)
 
     const changeColor = useCallback(
         (id) => {
@@ -39,9 +41,17 @@ const ProductContent = () => {
             {
                 productByColor && (
                     <StyledWrap>
-                        <StyledImg>
-                            <Image src={image}/>
-                        </StyledImg>
+                        <Swiper>
+                            {
+                                productByColor?.images?.map((item) => (
+                            <SwiperSlide>
+                                <StyledImg>
+                                    <Image src={item}/>
+                                </StyledImg>
+                            </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
                         <StyledBlockInfo>
                             <StyledName>{productData?.name}</StyledName>
                             <StyledDescription>{productByColor?.description}</StyledDescription>
@@ -58,7 +68,7 @@ const ProductContent = () => {
                                     }
                                 </Space>
                             </Space>
-                            <StyledSizes>sizes</StyledSizes>
+                            <StyledSizes>Sizes: {sizes}</StyledSizes>
                         </StyledBlockInfo>
                     </StyledWrap>
                 )
