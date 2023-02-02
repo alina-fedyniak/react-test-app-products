@@ -1,13 +1,13 @@
 import './App.css';
-import Products from "./components/Products/Products/Products";
+import {RouteNav} from "./routing/routing";
 
 function App() {
-  return (
-      <div className="App">
-        <h1>Products</h1>
-        <Products/>
-      </div>
-  );
+    return (
+        <div className="App">
+            <h1>Products</h1>
+            <RouteNav/>
+        </div>
+    );
 }
 
 export default App;

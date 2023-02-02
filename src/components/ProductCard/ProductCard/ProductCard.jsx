@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from 'antd';
+import { NavLink } from 'react-router-dom';
 import {
     StyledWrap,
     StyledName,
@@ -8,18 +9,22 @@ import {
 } from './ProductCardStyled';
 
 const ProductCard = (product) => {
-    const firstProduct = product?.product.colors.shift();
-    const image = firstProduct?.images?.shift();
+    const productData = product?.product.colors.shift();
+    const image = productData?.images?.shift();
 
     return (
         <>
             {
                 product && (
                     <StyledWrap>
-                        <Image src={image} />
-                        <StyledName>{product?.product?.name}</StyledName>
-                        <StyledDescription>{firstProduct?.description}</StyledDescription>
-                        <StyledPrice>{firstProduct?.price}</StyledPrice>
+                        <NavLink to={`/product/${product?.product?.id}`}>
+                            <Image src={image} />
+                        </NavLink>
+                        <NavLink to={`/product/${product?.product?.id}`}>
+                            <StyledName>{product?.product?.name}</StyledName>
+                        </NavLink>
+                        <StyledDescription>{productData?.description}</StyledDescription>
+                        <StyledPrice>{productData?.price}</StyledPrice>
                     </StyledWrap>
                 )
             }
