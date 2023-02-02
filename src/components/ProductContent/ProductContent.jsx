@@ -8,13 +8,15 @@ import {
     StyledPrice,
     StyledColorName,
     StyledSizes,
+    StyledImg,
+    StyledBlockInfo,
 } from './ProductContentStyled';
 import {getProduct} from "../../services/api";
 
 const ProductContent = () => {
     const [product, setProduct] = useState([]);
     const { id } = useParams();
-    const productData = product?.colors.shift();
+    const productData = product?.colors?.shift();
     const image = productData?.images?.shift();
 
     useEffect(() => {
@@ -26,18 +28,18 @@ const ProductContent = () => {
     return (
         <>
             {
-                product && (
+                productData && (
                     <StyledWrap>
-                        <div>
+                        <StyledImg>
                             <Image src={image}/>
-                        </div>
-                        <div>
-                            <StyledName>{productData?.name}</StyledName>
+                        </StyledImg>
+                        <StyledBlockInfo>
+                            <StyledName>{product?.name}</StyledName>
                             <StyledDescription>{productData?.description}</StyledDescription>
                             <StyledPrice>{productData?.price}</StyledPrice>
                             <StyledColorName>{productData?.name}</StyledColorName>
                             <StyledSizes>sizes</StyledSizes>
-                        </div>
+                        </StyledBlockInfo>
                     </StyledWrap>
                 )
             }

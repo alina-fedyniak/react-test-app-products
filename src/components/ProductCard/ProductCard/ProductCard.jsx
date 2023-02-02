@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import {
     StyledWrap,
     StyledName,
-    StyledDescription,
     StyledPrice,
+    StyledImg,
 } from './ProductCardStyled';
 
 const ProductCard = (product) => {
@@ -18,12 +18,14 @@ const ProductCard = (product) => {
                 product && (
                     <StyledWrap>
                         <NavLink to={`/product/${product?.product?.id}`}>
-                            <Image src={image} />
+                            <StyledImg>
+                                <Image src={image} />
+                            </StyledImg>
                         </NavLink>
                         <NavLink to={`/product/${product?.product?.id}`}>
                             <StyledName>{product?.product?.name}</StyledName>
                         </NavLink>
-                        <StyledDescription>{productData?.description}</StyledDescription>
+                        <div>{productData?.description}</div>
                         <StyledPrice>{productData?.price}</StyledPrice>
                     </StyledWrap>
                 )

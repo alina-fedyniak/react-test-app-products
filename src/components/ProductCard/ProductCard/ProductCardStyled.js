@@ -22,10 +22,10 @@ export const StyledName = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const StyledDescription = styled.div`
-  
-`;
-
 export const StyledPrice = styled.div`
   font-weight: 700;
+`;
+
+export const StyledImg = styled.div`
+  height: 360px;
 `;

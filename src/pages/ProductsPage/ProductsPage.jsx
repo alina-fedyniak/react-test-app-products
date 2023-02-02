@@ -10,7 +10,6 @@ const ProductsPage = () => {
 
     return (
         <StyledWrap>
-           <div>ProductsPage</div>
            <Products/>
         </StyledWrap>
     )

@@ -11,7 +11,6 @@ const ProductContentPage = () => {
 
     return (
         <StyledWrap>
-           <div>ProductContentPage</div>
            <ProductContent product={products}/>
         </StyledWrap>
     )
