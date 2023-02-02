@@ -27,5 +27,8 @@ export const StyledPrice = styled.div`
 `;
 
 export const StyledImg = styled.div`
-  height: 360px;
+  height: 370px;
+  img {
+    padding: 1rem;
+  }
 `;
