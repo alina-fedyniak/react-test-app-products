@@ -27,7 +27,7 @@ const ProductContent = () => {
             setProductData(products);
             setProductSize(sizes);
         });
-    }, []);
+    }, [id]);
 
     const changeColor = useCallback((id) => {
             const product = productData?.colors?.find((item) => item.id === id);
