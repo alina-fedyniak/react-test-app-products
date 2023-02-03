@@ -9,8 +9,8 @@ import {
 } from './ProductCardStyled';
 
 const ProductCard = (product) => {
-    const productData = product?.product.colors.shift();
-    const image = productData?.images?.shift();
+    const productData = product?.product?.colors?.at(0);
+    const image = productData?.images?.at(0);
 
     return (
         <>

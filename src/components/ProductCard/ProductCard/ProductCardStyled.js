@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledWrap = styled.div`
   max-width: 25rem;
-  height: 33rem;
+  height: 34rem;
   background: white;
   color: #484a4e;
   border: 0.06rem solid #e9e3e3;
@@ -11,9 +11,7 @@ export const StyledWrap = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: 2rem;
-  img {
-    height: 400px;
-  }
+  
 `;
 
 export const StyledName = styled.div`
@@ -27,8 +25,8 @@ export const StyledPrice = styled.div`
 `;
 
 export const StyledImg = styled.div`
-  height: 370px;
   img {
+    max-height: 400px;
     padding: 1rem;
   }
 `;

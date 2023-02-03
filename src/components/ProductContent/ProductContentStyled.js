@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import 'swiper/css';
+import { Button } from 'antd';
 
 export const StyledWrap = styled.div`
   max-width: 55rem;
@@ -22,9 +23,9 @@ export const StyledWrap = styled.div`
   }
 `;
 
-
-export const StyledImg = styled.div`
-  
+export const StyledBtn = styled(Button)`
+  border: ${({$isActive}) =>
+          $isActive ? '2px solid black' : '1px solid black'};
 `;
 
 export const StyledBlockInfo = styled.div`
@@ -39,21 +40,7 @@ export const StyledName = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const StyledDescription = styled.div`
-  
-`;
-
 export const StyledPrice = styled.div`
   font-weight: 600;
   font-size: 1.5rem;
 `;
-
-export const StyledSizes = styled.div`
-  
-`;
-
-export const StyledColorName = styled.div`
- 
-`;
-
-

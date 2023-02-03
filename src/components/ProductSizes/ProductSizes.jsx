@@ -1,38 +1,34 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Space, Button } from 'antd';
-import {
-    StyledWrap,
-} from './ProductSizesStyled';
-import {getSizes} from "../../services/api";
 
-const ProductSizes = () => {
-    const [productDataSize, setProductDataSize] = useState([]);
-    console.log(productDataSize)
+const ProductSizes = (props) => {
 
-    useEffect(() => {
-        getSizes().then((response) => {
-            setProductDataSize(response);
-        })
-    }, []);
+    const sizesAll = props.sizes.map((item) => {
+        item.active = props.product.sizes.includes(item.id)
+        return item
+    });
 
     return (
         <>
             {
-                productDataSize && (
-                    <StyledWrap>
+                sizesAll && (
+                    <div>
                         <div>Sizes:</div>
                         <Space direction="vertical">
                             <Space wrap>
-                                {productDataSize &&
-                                    productDataSize?.map((item, index) => {
-                                        return <Button  key={index} size={'small'}>
+                                {props &&
+                                    sizesAll?.map((item, index) => {
+                                        return <Button
+                                                        key={index} size={'small'}
+                                                        disabled={!item.active}
+                                        >
                                             {item.label}-{item.number}
                                         </Button>
                                     })
                                 }
                             </Space>
                         </Space>
-                    </StyledWrap>
+                    </div>
                 )
             }
         </>
