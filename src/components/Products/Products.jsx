@@ -4,8 +4,8 @@ import {
     StyledProductsContainer,
     StyledWrap,
 } from './ProductsStyled';
-import {getProducts} from '../../../services/api';
-import ProductCard from "../../ProductCard/ProductCard/ProductCard";
+import {getProducts} from '../../services/api';
+import ProductCard from "../ProductCard/ProductCard";
 
 const Products = () => {
     const [products, setProduct] = useState([]);
